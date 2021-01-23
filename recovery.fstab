@@ -3,12 +3,11 @@
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
 # mount point       fstype    device                                                                flags
-/persist            ext4      /dev/block/bootdevice/by-name/persist                                 flags=display="Persist"
-/persist_image      emmc      /dev/block/bootdevice/by-name/persist                                 flags=display="Persist image";backup=1;flashimg=1
 /system             ext4      /dev/block/bootdevice/by-name/system                                  flags=backup=1
 /system_image       emmc      /dev/block/bootdevice/by-name/system                                  flags=display="System image";backup=1;flashimg=1
 /cache              ext4      /dev/block/bootdevice/by-name/cache                                   
-/data               ext4      /dev/block/bootdevice/by-name/userdata                                
+/data               ext4      /dev/block/bootdevice/by-name/userdata  
+/data               f2fs      /dev/block/bootdevice/by-name/userdata 
 /boot               emmc      /dev/block/bootdevice/by-name/boot                                    
 /recovery           emmc      /dev/block/bootdevice/by-name/recovery                                flags=backup=1
 
